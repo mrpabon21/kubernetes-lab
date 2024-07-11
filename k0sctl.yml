@@ -1,0 +1,34 @@
+apiVersion: k0sctl.k0sproject.io/v1beta1
+kind: Cluster
+metadata:
+  name: k0s-cluster
+spec:
+  hosts:
+  - ssh:
+      address: 192.168.56.11
+      user: ubuntu
+      port: 22
+      keyPath: ~/.ssh/id_rsa
+    role: controller
+    privateAddress: 192.168.56.11
+  - ssh:
+      address: 192.168.56.12
+      user: ubuntu
+      port: 22
+      keyPath: ~/.ssh/id_rsa
+    role: worker
+    privateAddress: 192.168.56.12
+  - ssh:
+      address: 192.168.56.13
+      user: ubuntu
+      port: 22
+      keyPath: ~/.ssh/id_rsa
+    role: worker
+    privateAddress: 192.168.56.13
+  - ssh:
+      address: 192.168.56.14
+      user: ubuntu
+      port: 22
+      keyPath: ~/.ssh/id_rsa
+    role: worker
+    privateAddress: 192.168.56.14
